@@ -28,15 +28,13 @@ sentiment_dict = {
 }
 def app():
     st.write("# Twitter Sentiment Analysis")
+    st.write("****************************************")
 
     stModel = None
 
     @st.cache
     def load_training_dataset(vectorizer=None,tokenizer=None,ngrams=(1,1),stop_words=None,features=10000):
-        # st.write("****************************************")
-        # st.write("Parameters are ")
-        # st.write("Features ",features)
-        # st.write("Tokenizer ",tokenizer)
+      
         
         dataset = pd.read_csv("./Data/reviews_clean.csv", usecols=[1, 3], encoding='latin-1')
         x = dataset.reviews

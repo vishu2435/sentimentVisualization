@@ -32,7 +32,7 @@ import joblib
 #     return accuracy, test_train_time,sentiment_fit
 
 def run_classification(st,sent140_train_X, sent140_train_Y, sent140_dev_X, sent140_dev_Y,model):
-  
+  st.write("\n\nModel Is ",model)
   model.fit(sent140_train_X,sent140_train_Y)
   sent140_train_preds = model.predict(sent140_train_X)
   sent140_dev_preds = model.predict(sent140_dev_X)
